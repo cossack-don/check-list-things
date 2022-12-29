@@ -1,7 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
-const ButtonStyled = styled.button`
+
+const baseStyle = css`
 padding:5px 35px;
 border-radius:var(--border-radius);
 border:1px solid blue;
@@ -16,15 +17,27 @@ color:#111111;
 }
 `;
 
-const LinkStyled = styled(Link)`
-padding:5px 35px;
-border-radius:var(--border-radius);
-border:1px solid blue;
-background:red;
-color:#111111;
+const ButtonStyled = styled.button`
+  ${baseStyle}
 `;
 
-export default function Button({ children, toUrl, typeLink, typeButton }) {
+const LinkStyled = styled(Link)`
+  ${baseStyle}
+`;
+
+interface Props {
+  children: string;
+  toUrl?: string;
+  typeLink?: boolean;
+  typeButton?: boolean;
+}
+
+export default function Button({
+  children,
+  toUrl,
+  typeLink,
+  typeButton,
+}: Props) {
   return (
     <div>
       {typeButton && <ButtonStyled>{children}</ButtonStyled>}

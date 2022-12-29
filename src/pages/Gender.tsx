@@ -17,7 +17,7 @@ export default function Gender() {
   return (
     <div>
       <Button toUrl="/period" typeLink>
-        s{/* <Link to="/period">На сколько дней</Link> */}
+        Продолжить
       </Button>
       Gender 1. шаг М-Ж 2. Сколько дней
       <WrapperCardsRadioButtons>
