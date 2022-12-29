@@ -9,3 +9,16 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+enum StepsApp {
+  GENDER = 'GENDER',
+  PERIOD = 'PERIOD',
+  SEASON = 'SEASON',
+  TYPE_TRIP = 'TYPE_TRIP',
+  LIST_THINGS = 'LIST_THINGS',
+}
+
+// example
+// if ('TYPE_TRIP' === StepsApp['TYPE_TRIP']) {
+//   console.log(StepsApp.GENDER);
+// }

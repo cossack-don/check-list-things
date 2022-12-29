@@ -11,7 +11,6 @@ export default function Gender() {
 
   return (
     <div>
-      Gender 1. шаг М-Ж 2. Сколько дней
       <WrapperCardsRadioButtons>
         <CardRadioButton
           onChange={onChangeRadio}
