@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { usePickActiveCardRadio } from '../../../hooks';
 import { CardRadioButton, WrapperCardsRadioButtons } from '../../../../src/UI';
+import { usePickActiveCardRadio } from '../../../hooks';
 
 interface IDataCards {
   id: number;
@@ -11,36 +11,17 @@ interface IDataCards {
 const dataCards: IDataCards[] = [
   {
     id: 1,
-    value: '1 day',
-    text: '1 день',
+    value: 'man',
+    text: 'Мужчина',
   },
   {
     id: 2,
-    value: '3 day',
-    text: '3 дня',
-  },
-
-  {
-    id: 3,
-    value: '7 days',
-    text: '7 дней',
-  },
-
-  {
-    id: 4,
-    value: '14 days',
-    text: '14 дней',
-  },
-
-  {
-    id: 5,
-    value: '30 days',
-    text: '30 дней',
+    value: 'woman',
+    text: 'Женщина',
   },
 ];
-
-export default function ListDays() {
-  const [value, onChangeRadio] = usePickActiveCardRadio('1 day');
+export default function ListGenders() {
+  const [value, onChangeRadio] = usePickActiveCardRadio('man');
 
   const cards = dataCards.map((item) => {
     return (

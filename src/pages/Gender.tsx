@@ -1,32 +1,11 @@
 import * as React from 'react';
-import {
-  CardRadioButton,
-  WrapperCardsRadioButtons,
-  Button,
-} from '../../src/UI';
-import { usePickActiveCardRadio } from '../hooks';
+import { Button } from '../../src/UI';
 
+import ListGenders from '../../src/modules/gender/components/ListGenders';
 export default function Gender() {
-  const [value, onChangeRadio] = usePickActiveCardRadio('red');
-
   return (
     <div>
-      <WrapperCardsRadioButtons>
-        <CardRadioButton
-          onChange={onChangeRadio}
-          defaultValue="red"
-          isActive={value}
-        >
-          Man
-        </CardRadioButton>
-        <CardRadioButton
-          onChange={onChangeRadio}
-          defaultValue="blue"
-          isActive={value}
-        >
-          Woman
-        </CardRadioButton>
-      </WrapperCardsRadioButtons>
+      <ListGenders />
       <Button toUrl="/period" typeLink>
         Продолжить
       </Button>
