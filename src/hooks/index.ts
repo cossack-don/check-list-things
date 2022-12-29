@@ -1,3 +1,4 @@
 import usePickActiveCardRadio from '../../src/hooks/usePickActiveCardRadio';
 
-export { usePickActiveCardRadio };
+import useActiveStep from '../../src/hooks/useActiveStep';
+export { usePickActiveCardRadio, useActiveStep };

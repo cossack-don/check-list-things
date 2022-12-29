@@ -6,13 +6,18 @@ import { Counter } from './src/store/features/counter/Counter';
 import Header from './Header';
 import Footer from './Footer';
 import Routers from './src/routers';
-import { Column, TypographyTitle, Spinner } from './src/UI';
+import { Column, TypographyTitle, Spinner, Stepper } from './src/UI';
 const TestStyledComponent = styled.div`
   background:red;
   color:var(--text)
 `;
-
+import { StepsApp } from './src/UI/Stepper';
+import { useActiveStep } from './src/hooks';
 export default function App() {
+  const [step, nextStep] = useActiveStep(StepsApp, 0) as any;
+  const titles = StepsApp.map((item, index) => {
+    return <div>{index === step && item.title}</div>;
+  });
   return (
     <div>
       {/* <TestStyledComponent>22</TestStyledComponent> */}
@@ -25,8 +30,10 @@ export default function App() {
         <TypographyTitle text="2" />
         checkbox
       </Column> */}
+      {titles}
       <Header />
       <Routers />
+      <Stepper />
       <Footer />
     </div>
   );

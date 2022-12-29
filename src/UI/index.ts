@@ -6,6 +6,8 @@ import Checkbox from '../../src/UI/Checkbox';
 import Button from '../../src/UI/Button';
 import CardRadioButton from '../../src/UI/CardRadioButton';
 import WrapperCardsRadioButtons from '../../src/UI/WrapperCardsRadioButtons';
+import Stepper from '../../src/UI/Stepper';
+
 export {
   Column,
   TypographyTitle,
@@ -13,6 +15,7 @@ export {
   Spinner,
   Checkbox,
   Button,
+  Stepper,
   CardRadioButton,
   WrapperCardsRadioButtons,
 };
