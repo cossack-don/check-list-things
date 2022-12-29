@@ -6,7 +6,7 @@ import { Counter } from './src/store/features/counter/Counter';
 import Header from './Header';
 import Footer from './Footer';
 import Routers from './src/routers';
-import { Column, TypographyTitle, Spinner, CardSquare } from './src/UI';
+import { Column, TypographyTitle, Spinner } from './src/UI';
 const TestStyledComponent = styled.div`
   background:red;
   color:var(--text)
@@ -15,16 +15,16 @@ const TestStyledComponent = styled.div`
 export default function App() {
   return (
     <div>
-      <TestStyledComponent>22</TestStyledComponent>
+      {/* <TestStyledComponent>22</TestStyledComponent> */}
       {/* example styled-components */}
-      <Counter />
+      {/* <Counter /> */}
       {/* example store - Counter */}
-      <Spinner />
-
-      <Column>
+      {/* <Spinner /> */}
+      {/* UIKIT */}
+      {/* <Column>
         <TypographyTitle text="2" />
         checkbox
-      </Column>
+      </Column> */}
       <Header />
       <Routers />
       <Footer />
