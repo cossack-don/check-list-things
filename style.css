@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  background: #dce5eb;
+  background-image: url('./src/assets/bg.svg');
+}
+
+/* https://colorhunt.co/palette/4721834b56d282c3ecf1f6f5 */
+:root {
+  --text: #472183;
+  --title: #4b56d2;
+  --border: #82c3ec;
+  --background: #f1f6f5;
+  --border-radius: 10px;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
