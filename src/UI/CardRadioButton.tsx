@@ -22,7 +22,7 @@ const ContainerCardRadioButton = styled.label<{ activeButton: boolean }>`
 
 interface Props {
   defaultValue: string;
-  isActive: string;
+  isActive: any;
   onChange: any;
   children: any;
 }

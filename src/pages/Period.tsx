@@ -1,9 +1,15 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Button } from '../../src/UI';
+import ListDays from '../../src/modules/period/components/ListDays';
+
 export default function Period() {
   return (
     <div>
-      Period 3/7/14 <Link to="/season">Погода</Link>
+      <ListDays />
+
+      <Button toUrl="/season" typeLink>
+        Продолжить
+      </Button>
     </div>
   );
 }

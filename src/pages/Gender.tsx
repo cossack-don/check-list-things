@@ -1,41 +1,36 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import {
-  Column,
-  TypographyTitle,
-  Spinner,
   CardRadioButton,
   WrapperCardsRadioButtons,
   Button,
 } from '../../src/UI';
+import { usePickActiveCardRadio } from '../hooks';
+
 export default function Gender() {
-  const [value, setValue] = React.useState('red');
-  const onRadioChange = (e) => {
-    setValue(e.target.value);
-  };
+  const [value, onChangeRadio] = usePickActiveCardRadio('red');
 
   return (
     <div>
-      <Button toUrl="/period" typeLink>
-        Продолжить
-      </Button>
       Gender 1. шаг М-Ж 2. Сколько дней
       <WrapperCardsRadioButtons>
         <CardRadioButton
-          onChange={onRadioChange}
+          onChange={onChangeRadio}
           defaultValue="red"
           isActive={value}
         >
           Man
         </CardRadioButton>
         <CardRadioButton
-          onChange={onRadioChange}
+          onChange={onChangeRadio}
           defaultValue="blue"
           isActive={value}
         >
           Woman
         </CardRadioButton>
       </WrapperCardsRadioButtons>
+      <Button toUrl="/period" typeLink>
+        Продолжить
+      </Button>
     </div>
   );
 }
