@@ -14,7 +14,6 @@ interface Props {
 }
 
 export default function ListDays({ listData, defaultValue }: Props) {
-  // array-list-data, typeList, default value
   const [value, onChangeRadio] = usePickActiveCardRadio(defaultValue);
 
   const cards = listData.map((item) => {

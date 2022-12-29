@@ -1,6 +1,5 @@
 import * as React from 'react';
-
-import { Link } from 'react-router-dom';
+import { Button } from '../../src/UI';
 
 import ListCards from '../../src/components/ListCards';
 
@@ -30,8 +29,9 @@ export default function Season() {
   return (
     <div>
       <ListCards listData={dataCards} defaultValue="spring" />
-      Season
-      <Link to="/type-trip">К типу отдыха</Link>
+      <Button toUrl="/type-trip" typeLink>
+        Продолжить
+      </Button>
     </div>
   );
 }
