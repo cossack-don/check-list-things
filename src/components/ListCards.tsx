@@ -11,10 +11,19 @@ interface IDataCards {
 interface Props {
   listData: IDataCards[];
   defaultValue: string;
+
+  setActiveValue: any;
 }
 
-export default function ListDays({ listData, defaultValue }: Props) {
+export default function ListDays({
+  listData,
+  defaultValue,
+
+  setActiveValue,
+}: Props) {
   const [value, onChangeRadio] = usePickActiveCardRadio(defaultValue);
+  console.log(value);
+  setActiveValue((oldValue) => (oldValue = value));
 
   const cards = listData.map((item) => {
     return (

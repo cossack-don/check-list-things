@@ -21,11 +21,15 @@ const dataCards = [
 
 export default function Gender() {
   const dispatch = useDispatch();
-
+  const [isActiveValue, setActiveValue] = React.useState('man');
   return (
     <div>
-      <ListCards listData={dataCards} defaultValue="man" />
-
+      <ListCards
+        setActiveValue={setActiveValue}
+        listData={dataCards}
+        defaultValue="man"
+      />
+      {isActiveValue}
       <Button
         toUrl="/period"
         typeLink
