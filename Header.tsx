@@ -23,6 +23,14 @@ export default function Header() {
         <li>
           <Link to="/">Авторизация</Link>
         </li>
+
+        <li>
+          ru/en - i18
+        </li>
+
+        <li>
+          dark/light theme
+        </li>
       </ul>
     </div>
   );
