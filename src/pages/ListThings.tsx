@@ -1,41 +1,37 @@
 import * as React from 'react';
-import {
-  Column,
-  TypographyTitle,
-  Spinner,
-  Stepper,
-  TypographyText,
-  Checkbox,
-} from '../../src/UI';
+import { Column, TypographyText, Checkbox } from '../../src/UI';
+
+interface IListCheckboxs {
+  id: number;
+  checked: boolean;
+  text: string;
+}
+
+const listDataCheckboxs = [
+  { id: 1, checked: false, text: 'first' },
+  {
+    id: 2,
+    checked: true,
+    text: 'second',
+  },
+  { id: 3, checked: true, text: 'thid' },
+];
+
 export default function ListThings() {
-  const [value, setValue] = React.useState([
-    {
-      n: false,
-    },
-    {
-      n: true,
-    },
-    {
-      n: true,
-    },
-  ]) as any;
-  // React.useEffect(() => {
-  //   console.log(value);
-  // }, [value]);
-  const handleOnChange = (e) => {
-    // value.forEach((item) => {
-    //   // setValue({ ...value.n, n: item.n });
-    //   // console.log(item.n);
+  const [value, setValue] = React.useState<IListCheckboxs[]>(listDataCheckboxs);
 
-    // });
-
-    console.log(value, 11);
-    // setValue(!value);
+  const handleOnChange = (e, index) => {
+    value[index].checked = e;
+    console.log(value);
   };
-  const test = value.map((item, index) => {
+  const listCheckboxs = value.map((item, index) => {
     return (
-      <Checkbox key={index} defaultValue={item.n} onChange={handleOnChange}>
-        <TypographyText>Название вещи</TypographyText>
+      <Checkbox
+        key={item.id}
+        defaultValue={item.checked}
+        onChange={(e) => handleOnChange(e, index)}
+      >
+        <TypographyText>{item.text}</TypographyText>
       </Checkbox>
     );
   });
@@ -43,7 +39,7 @@ export default function ListThings() {
   return (
     <div style={{ display: 'flex' }}>
       <Column>
-        {test}
+        {listCheckboxs}
         {/* <Checkbox defaultValue={value[0].n} onChange={handleOnChange}>
           <TypographyText>Название вещи</TypographyText>
         </Checkbox>
