@@ -16,7 +16,7 @@ import { useActiveStep } from './src/hooks';
 export default function App() {
   const [step, nextStep] = useActiveStep(StepsApp, 0) as any;
   const titles = StepsApp.map((item, index) => {
-    return <div>{index === step && item.title}</div>;
+    return <div key={index}>{index === step && item.title}</div>;
   });
   return (
     <div>
@@ -30,7 +30,7 @@ export default function App() {
         <TypographyTitle text="2" />
         checkbox
       </Column> */}
-      {titles}
+      {titles} надо чтобы общий стор был со степпером, а не локальный
       <Header />
       <Routers />
       <Stepper />

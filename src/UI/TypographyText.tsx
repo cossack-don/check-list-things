@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-export default function TypographyText({ text }) {
-  return <p>{text}</p>;
+export default function TypographyText({ children }) {
+  return <p>{children}</p>;
 }

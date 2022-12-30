@@ -37,7 +37,7 @@ export default function Stepper() {
   const [step, nextStep] = useActiveStep(StepsApp, 0) as any;
   const steps = StepsApp.map((item, index) => {
     return (
-      <div>
+      <div key={index}>
         <StepStyled activeStep={index <= step}>1</StepStyled>
       </div>
     );
