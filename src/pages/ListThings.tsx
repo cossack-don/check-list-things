@@ -38,41 +38,9 @@ export default function ListThings() {
 
   return (
     <div style={{ display: 'flex' }}>
-      <Column>
-        {listCheckboxs}
-        {/* <Checkbox defaultValue={value[0].n} onChange={handleOnChange}>
-          <TypographyText>Название вещи</TypographyText>
-        </Checkbox>
-
-        <Checkbox defaultValue={value[1].n} onChange={handleOnChange}>
-          <TypographyText>Название вещи</TypographyText>
-        </Checkbox> */}
-        {/* 
-        <Checkbox>
-          <TypographyText>Название вещи</TypographyText>
-        </Checkbox>
-
-        <Checkbox>
-          <TypographyText>Название вещи</TypographyText>
-        </Checkbox>
-      </Column>
-      <Column>
-        <Checkbox>
-          <TypographyText>Название вещи</TypographyText>
-        </Checkbox>
-
-        <Checkbox>
-          <TypographyText>Название вещи</TypographyText>
-        </Checkbox>
-
-        <Checkbox>
-          <TypographyText>Название вещи</TypographyText>
-        </Checkbox>
-
-        <Checkbox>
-          <TypographyText>Название вещи</TypographyText>
-        </Checkbox> */}
-      </Column>
+      <Column>{listCheckboxs}</Column>
+      <Column>{listCheckboxs}</Column>
+      <Column>{listCheckboxs}</Column>
     </div>
   );
 }

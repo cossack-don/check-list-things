@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Button } from '../../src/UI';
 
+import { useDispatch } from 'react-redux';
+import { changeStatusStep } from '../../src/store/features/steps/steps';
+
 import ListCards from '../../src/components/ListCards';
 
 const dataCards = [
@@ -25,16 +28,22 @@ const dataCards = [
     value: 'expedition',
   },
   {
-    id: 4,
+    id: 5,
     text: 'В Краснодар',
     value: 'krasnodar',
   },
 ];
 export default function TypeTrip() {
+  const dispatch = useDispatch();
+
+  const changeStatusSteps = () => {
+    dispatch(changeStatusStep('TYPE_TRIP'));
+    dispatch(changeStatusStep('LIST_THINGS'));
+  };
   return (
     <div>
       <ListCards listData={dataCards} defaultValue="krasnodar" />
-      <Button toUrl="/list-things" typeLink>
+      <Button toUrl="/list-things" typeLink onClick={changeStatusSteps}>
         Продолжить
       </Button>
     </div>

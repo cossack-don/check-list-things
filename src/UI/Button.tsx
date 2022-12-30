@@ -26,10 +26,11 @@ const LinkStyled = styled(Link)`
 `;
 
 interface Props {
-  children: string;
+  children?: string;
   toUrl?: string;
   typeLink?: boolean;
   typeButton?: boolean;
+  onClick?: (payload: string) => void;
 }
 
 export default function Button({
@@ -37,12 +38,17 @@ export default function Button({
   toUrl,
   typeLink,
   typeButton,
+  onClick,
 }: Props) {
   return (
     <div>
-      {typeButton && <ButtonStyled>{children}</ButtonStyled>}
+      {typeButton && <ButtonStyled onClick={onClick}>{children}</ButtonStyled>}
 
-      {typeLink && <LinkStyled to={toUrl}>{children}</LinkStyled>}
+      {typeLink && (
+        <LinkStyled to={toUrl} onClick={onClick}>
+          {children}
+        </LinkStyled>
+      )}
     </div>
   );
 }

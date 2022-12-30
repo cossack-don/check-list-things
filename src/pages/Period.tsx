@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Button } from '../../src/UI';
 
+import { useDispatch } from 'react-redux';
+import { changeStatusStep } from '../../src/store/features/steps/steps';
+
 import ListCards from '../../src/components/ListCards';
 const dataCards = [
   {
@@ -33,11 +36,17 @@ const dataCards = [
   },
 ];
 export default function Period() {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <ListCards listData={dataCards} defaultValue="1 day" />
 
-      <Button toUrl="/season" typeLink>
+      <Button
+        toUrl="/season"
+        typeLink
+        onClick={() => dispatch(changeStatusStep('PERIOD'))}
+      >
         Продолжить
       </Button>
     </div>

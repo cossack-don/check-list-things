@@ -3,6 +3,9 @@ import { Button } from '../../src/UI';
 
 import ListCards from '../../src/components/ListCards';
 
+import { useDispatch } from 'react-redux';
+import { changeStatusStep } from '../../src/store/features/steps/steps';
+
 const dataCards = [
   {
     id: 1,
@@ -26,10 +29,15 @@ const dataCards = [
   },
 ];
 export default function Season() {
+  const dispatch = useDispatch();
   return (
     <div>
       <ListCards listData={dataCards} defaultValue="spring" />
-      <Button toUrl="/type-trip" typeLink>
+      <Button
+        toUrl="/type-trip"
+        typeLink
+        onClick={() => dispatch(changeStatusStep('SEASON'))}
+      >
         Продолжить
       </Button>
     </div>
