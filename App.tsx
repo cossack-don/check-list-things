@@ -25,12 +25,13 @@ export default function App() {
 
   //
   const count = useSelector((state: RootState) => state.steps);
-  
+
   console.log(count);
 
   const stateSteps = count;
   return (
     <div>
+      Maximum call stack size exceeded при смене роута
       {count['GENDER'].name} - {count['GENDER'].status ? 'true' : 'false'}
       <br />
       {count['PERIOD'].name} - {count['PERIOD'].status ? 'true' : 'false'}
