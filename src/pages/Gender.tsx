@@ -23,7 +23,6 @@ export default function Gender() {
   const dispatch = useDispatch();
   const [isActiveValue, setActiveValue] = React.useState('man');
 
-  console.log(isActiveValue, 'test');
   return (
     <div>
       <ListCards

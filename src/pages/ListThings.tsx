@@ -22,7 +22,6 @@ export default function ListThings() {
 
   const handleOnChange = (e, index) => {
     value[index].checked = e;
-    console.log(value);
   };
   const listCheckboxs = value.map((item, index) => {
     return (

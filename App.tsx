@@ -28,7 +28,7 @@ export default function App() {
 
   console.log(count);
 
-  const stateSteps = count;
+  // const stateSteps = count;
   return (
     <div>
       Maximum call stack size exceeded при смене роута
