@@ -23,7 +23,7 @@ export default function ListDays({
 }: Props) {
   const [value, onChangeRadio] = usePickActiveCardRadio(defaultValue);
   console.log(value);
-  setActiveValue((oldValue) => (oldValue = value));
+  // setActiveValue((oldValue) => (oldValue = value)); // отвечает за активность man/woman
 
   const cards = listData.map((item) => {
     return (

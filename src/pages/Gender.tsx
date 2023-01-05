@@ -30,6 +30,7 @@ export default function Gender() {
         defaultValue="man"
       />
       {isActiveValue}
+      {/* выводит man/woman падает ошибка в list card - править */}
       <Button
         toUrl="/period"
         typeLink
