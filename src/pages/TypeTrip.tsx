@@ -35,6 +35,7 @@ const dataCards = [
 ];
 export default function TypeTrip() {
   const dispatch = useDispatch();
+  const [isActiveValue, setActiveValue] = React.useState('krasnodar');
 
   const changeStatusSteps = () => {
     dispatch(changeStatusStep('TYPE_TRIP'));
@@ -42,7 +43,12 @@ export default function TypeTrip() {
   };
   return (
     <div>
-      <ListCards listData={dataCards} defaultValue="krasnodar" />
+      <ListCards
+        setActiveValue={setActiveValue}
+        listData={dataCards}
+        defaultValue={isActiveValue}
+      />
+      {isActiveValue}
       <Button toUrl="/list-things" typeLink onClick={changeStatusSteps}>
         Продолжить
       </Button>

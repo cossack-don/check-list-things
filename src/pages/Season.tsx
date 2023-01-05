@@ -30,9 +30,15 @@ const dataCards = [
 ];
 export default function Season() {
   const dispatch = useDispatch();
+  const [isActiveValue, setActiveValue] = React.useState('spring');
   return (
     <div>
-      <ListCards listData={dataCards} defaultValue="spring" />
+      <ListCards
+        setActiveValue={setActiveValue}
+        listData={dataCards}
+        defaultValue={isActiveValue}
+      />
+      {isActiveValue}
       <Button
         toUrl="/type-trip"
         typeLink

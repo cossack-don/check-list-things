@@ -36,12 +36,17 @@ const dataCards = [
   },
 ];
 export default function Period() {
+  const [isActiveValue, setActiveValue] = React.useState('1 day');
   const dispatch = useDispatch();
 
   return (
     <div>
-      <ListCards listData={dataCards} defaultValue="1 day" />
-
+      <ListCards
+        setActiveValue={setActiveValue}
+        listData={dataCards}
+        defaultValue={isActiveValue}
+      />
+      {isActiveValue}
       <Button
         toUrl="/season"
         typeLink
