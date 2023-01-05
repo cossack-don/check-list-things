@@ -22,12 +22,14 @@ const dataCards = [
 export default function Gender() {
   const dispatch = useDispatch();
   const [isActiveValue, setActiveValue] = React.useState('man');
+
+  console.log(isActiveValue, 'test');
   return (
     <div>
       <ListCards
         setActiveValue={setActiveValue}
         listData={dataCards}
-        defaultValue="man"
+        defaultValue={isActiveValue}
       />
       {isActiveValue}
       {/* выводит man/woman падает ошибка в list card - править */}

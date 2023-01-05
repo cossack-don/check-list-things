@@ -15,15 +15,18 @@ interface Props {
   setActiveValue: any;
 }
 
-export default function ListDays({
+export default function ListCards({
   listData,
   defaultValue,
 
   setActiveValue,
 }: Props) {
   const [value, onChangeRadio] = usePickActiveCardRadio(defaultValue);
-  console.log(value);
-  // setActiveValue((oldValue) => (oldValue = value)); // отвечает за активность man/woman
+  console.log(value, 3);
+  React.useEffect(() => {
+    setActiveValue(value);
+  }, [value]);
+  // отвечает за активность man/woman
 
   const cards = listData.map((item) => {
     return (
