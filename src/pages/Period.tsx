@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { Button } from '../../src/UI';
 
-import { useDispatch } from 'react-redux';
+import type { RootState } from '../../src/store/store';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { increment } from '../../src/store/features/counter/counterSlice';
+
 import { changeStatusStep } from '../../src/store/features/steps/steps';
 
 import ListCards from '../../src/components/ListCards';
@@ -39,6 +43,10 @@ export default function Period() {
   const [isActiveValue, setActiveValue] = React.useState('1 day');
   const dispatch = useDispatch();
 
+  const handleStep = () => {
+    dispatch(increment());
+    dispatch(changeStatusStep('PERIOD'));
+  };
   return (
     <div>
       <ListCards
@@ -47,11 +55,7 @@ export default function Period() {
         defaultValue={isActiveValue}
       />
       {isActiveValue}
-      <Button
-        toUrl="/season"
-        typeLink
-        onClick={() => dispatch(changeStatusStep('PERIOD'))}
-      >
+      <Button toUrl="/season" typeLink onClick={handleStep}>
         Продолжить
       </Button>
     </div>

@@ -3,6 +3,7 @@ import { Button } from '../../src/UI';
 
 import ListCards from '../../src/components/ListCards';
 
+import { increment } from '../../src/store/features/counter/counterSlice';
 import { useDispatch } from 'react-redux';
 import { changeStatusStep } from '../../src/store/features/steps/steps';
 
@@ -31,6 +32,11 @@ const dataCards = [
 export default function Season() {
   const dispatch = useDispatch();
   const [isActiveValue, setActiveValue] = React.useState('spring');
+
+  const handleStep = () => {
+    dispatch(increment());
+    dispatch(changeStatusStep('SEASON'));
+  };
   return (
     <div>
       <ListCards
@@ -39,11 +45,7 @@ export default function Season() {
         defaultValue={isActiveValue}
       />
       {isActiveValue}
-      <Button
-        toUrl="/type-trip"
-        typeLink
-        onClick={() => dispatch(changeStatusStep('SEASON'))}
-      >
+      <Button toUrl="/type-trip" typeLink onClick={handleStep}>
         Продолжить
       </Button>
     </div>

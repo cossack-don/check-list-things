@@ -26,7 +26,7 @@ const data = {
 
 export default function ListThings() {
   const [value, setValue] = React.useState<IListCheckboxs[]>(listDataCheckboxs);
-  const count = useSelector((state: RootState) => state.steps);
+  // const count = useSelector((state: RootState) => state.steps);
   const handleOnChange = (e, index) => {
     value[index].checked = e;
   };

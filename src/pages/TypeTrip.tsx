@@ -3,7 +3,7 @@ import { Button } from '../../src/UI';
 
 import { useDispatch } from 'react-redux';
 import { changeStatusStep } from '../../src/store/features/steps/steps';
-
+import { increment } from '../../src/store/features/counter/counterSlice';
 import ListCards from '../../src/components/ListCards';
 
 const dataCards = [
@@ -38,6 +38,7 @@ export default function TypeTrip() {
   const [isActiveValue, setActiveValue] = React.useState('krasnodar');
 
   const changeStatusSteps = () => {
+    dispatch(increment());
     dispatch(changeStatusStep('TYPE_TRIP'));
     dispatch(changeStatusStep('LIST_THINGS'));
   };
