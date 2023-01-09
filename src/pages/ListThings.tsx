@@ -17,9 +17,16 @@ const listDataCheckboxs = [
   { id: 3, checked: true, text: 'thid' },
 ];
 
+const data = {
+  step_1: {
+    woman: [1, 2, 3, 4],
+    man: [1, 2, 3, 4, 33333],
+  },
+};
+
 export default function ListThings() {
   const [value, setValue] = React.useState<IListCheckboxs[]>(listDataCheckboxs);
-
+  const count = useSelector((state: RootState) => state.steps);
   const handleOnChange = (e, index) => {
     value[index].checked = e;
   };
